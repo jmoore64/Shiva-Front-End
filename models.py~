@@ -1,0 +1,12 @@
+from  import db
+
+class User(db.Model):
+	username = db.Column(db.String(20), primary_key=True)
+	password = db.Column(db.String(20))
+	port = db.Column(db.Integer, index=True)
+	token = db.Column(db.BigInteger,unique=True,default=0)
+	
+
+	def __repr__(self):
+		return '<User %r>' % (self.username)
+
